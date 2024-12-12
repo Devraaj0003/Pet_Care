@@ -5,23 +5,6 @@ const { and } = require('sequelize');
 
 const SECRET_KEY = 'secret123';
 
-// function login(req, res) {
-//     console.log('Login route hit');
-//     const { username, password } = req.body;
-//     console.log(req.body.username);
-//     console.log(req.body.password);
-
-//     const sql = `SELECT * FROM login WHERE email = ? AND pass = ?`;
-//     db.query(sql, [req.body.username, req.body.password], (err, results) => {
-//         if (err) return res.json("Error");
-//         if (results.length > 0) {
-//             return res.json("Login Successfully");
-//         } else {
-//             return res.json("No records");
-//         }
-//     });
-// };
-
 function login(req, res) {
     const { email, password } = req.body;
     const query = 'SELECT * FROM login WHERE email = ? AND password = ?';

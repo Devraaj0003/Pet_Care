@@ -13,25 +13,6 @@ app.use(express.json());
 app.use(cors());
 
 
-
-// app.post('/login', (req, res) => {
-//     console.log('Login route hit', req.body);
-//     const { email, password } = req.body;
-//     const sql = 'SELECT * FROM login WHERE email = ? && password = ?';
-
-//     db.query(sql, [email, password], (err, results) => {
-//         // if (err) return res.status(500).json(err);
-//         if (results.length === 0) return res.status(404).json({ message: 'User not found' });
-//         return res.json(results);
-//         // const user = results[0];
-//         // const validPassword = bcrypt.compareSync(password, user.password);
-//         // if (!validPassword) return res.status(401).json({ message: 'Invalid password' });
-
-//         //const token = jwt.sign({ id: user.id, role: user.role }, secret, { expiresIn: '1h' });
-//         //res.json({ token });
-//     });
-// });
-
 const formHandler = require('./function/formhandler');
 
 // Routes
