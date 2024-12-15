@@ -63,7 +63,7 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4000/admin/login', { email, password });
+            const response = await axios.post('http://localhost:4000/auth/login', { email, password });
             localStorage.setItem('token', response.data.token);
             navigate('/Dashboard');
         } catch (err) {
@@ -72,14 +72,14 @@ const Login = () => {
     };
 
     return (
-        <div className="container mt-5">
-            <h2>Login Admin</h2>
-            <form onSubmit={handleLogin}>
+        <div className="login-containe container mt-5 text-light">
+            <h2 className="text-center">Login Admin</h2>
+            <form onSubmit={handleLogin} className="p-4 rounded bg-dark">
                 <div className="mb-3">
                     <label>Email</label>
                     <input
                         type="email"
-                        className="form-control"
+                        className="form-control bg-secondary text-light border-0"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -89,15 +89,14 @@ const Login = () => {
                     <label>Password</label>
                     <input
                         type="password"
-                        className="form-control"
+                        className="form-control bg-secondary text-light border-0"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-primary w-100">Login</button>
             </form>
-
         </div>
     );
 };

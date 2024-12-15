@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Landing from './pages/Landing';
-import AdminLogin from './pages/AdminLogin';
-import Dashboard from './pages/Dashboard';
-import ProtectedRoute from './pages/ProtectedRoute';
+import Login from './routes/Login';
+import Register from './routes/Register';
+import Landing from './routes/Landing';
+import AdminLogin from './routes/AdminLogin';
+import Dashboard from './routes/Dashboard';
+import ProtectedRoute from './routes/ProtectedRoute';
 import MyBookings from './components/MyBookings';
 
 function App() {
